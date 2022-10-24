@@ -48,9 +48,6 @@ class GifActivity : ComponentActivity() {
             }
 
         binding.player.apply {
-            setShowNextButton(false)
-            setShowPreviousButton(false)
-            setShowVrButton(false)
             player = exoPlayer
 
             setOnClickListener {

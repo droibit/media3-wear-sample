@@ -23,6 +23,8 @@ class VideoActivity : ComponentActivity() {
         override fun onRenderedFirstFrame() {
             Log.d(BuildConfig.BUILD_TYPE, "#onRenderedFirstFrame")
             binding.progress.isGone = true
+
+            Log.d(BuildConfig.BUILD_TYPE, "volume=${exoPlayer.volume}, deviceVolume=${exoPlayer.deviceVolume}")
         }
 
         override fun onPlayerError(error: PlaybackException) {
@@ -49,9 +51,6 @@ class VideoActivity : ComponentActivity() {
             }
 
         binding.player.apply {
-            setShowNextButton(false)
-            setShowPreviousButton(false)
-            setShowVrButton(false)
             player = exoPlayer
         }
     }
