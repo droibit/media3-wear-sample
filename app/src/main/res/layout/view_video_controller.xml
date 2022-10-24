@@ -4,26 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:parentTag="android.widget.FrameLayout">
 
-    <View
-        android:id="@id/exo_controls_background"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#98000000" />
-
-    <androidx.wear.widget.BoxInsetLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/exo_styled_progress_layout_height"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="@dimen/exo_styled_progress_margin_bottom">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@id/exo_progress_placeholder"
-            app:boxedEdges="left|right" />
-
-    </androidx.wear.widget.BoxInsetLayout>
-
     <LinearLayout
         android:id="@id/exo_center_controls"
         android:layout_width="wrap_content"
@@ -39,5 +19,24 @@
             style="@style/ExoStyledControls.Button.Center.PlayPause" />
 
     </LinearLayout>
+
+    <View
+        android:id="@id/exo_controls_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#98000000" />
+
+    <androidx.wear.widget.BoxInsetLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/exo_styled_progress_layout_height"
+        android:layout_gravity="bottom">
+
+        <View
+            android:id="@id/exo_progress_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:boxedEdges="bottom|left|right" />
+
+    </androidx.wear.widget.BoxInsetLayout>
 
 </merge>
