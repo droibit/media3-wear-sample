@@ -29,6 +29,7 @@ android {
 dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.wear:wear:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     def media3_version = "1.0.0-beta02"
     // For media playback using ExoPlayer

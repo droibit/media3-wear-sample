@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,22 +7,23 @@
     tools:context=".MainActivity"
     tools:deviceIds="wear">
 
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/player"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:auto_show="false"
-        app:hide_on_touch="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:boxedEdges="all">
 
-        <requestFocus />
-    </androidx.media3.ui.PlayerView>
+        <Button
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Video" />
 
-    <ProgressBar
-        android:id="@+id/progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center" />
+        <Button
+            android:id="@+id/gif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GIF" />
+    </LinearLayout>
 
-</FrameLayout>
+</androidx.wear.widget.BoxInsetLayout>
