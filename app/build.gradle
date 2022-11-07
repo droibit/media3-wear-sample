@@ -39,4 +39,10 @@ dependencies {
     implementation "androidx.media3:media3-ui:$media3_version"
 
     implementation 'com.google.android.gms:play-services-wearable:18.0.0'
+
+    def okhttp_version = "4.10.0"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+
 }

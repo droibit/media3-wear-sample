@@ -11,8 +11,13 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
+import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.example.media3.wear_sample.databinding.ActivityVideoBinding
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.logging.HttpLoggingInterceptor.Level
 
 class VideoActivity : ComponentActivity() {
     private lateinit var binding: ActivityVideoBinding
@@ -32,6 +37,16 @@ class VideoActivity : ComponentActivity() {
         }
     }
 
+    private val okHttp: OkHttpClient by lazy {
+        OkHttpClient.Builder()
+            .addInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = Level.BASIC
+                }
+            )
+            .build()
+    }
+
     @UnstableApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +54,11 @@ class VideoActivity : ComponentActivity() {
         setContentView(binding.root)
 
         exoPlayer = ExoPlayer.Builder(this)
+            .setMediaSourceFactory(
+                DefaultMediaSourceFactory(
+                    OkHttpDataSource.Factory(okHttp)
+                )
+            )
             .build().apply {
                 val mediaItem = MediaItem.Builder()
                     // For tweet with native video.

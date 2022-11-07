@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:parentTag="android.widget.FrameLayout">
 
+    <View
+        android:id="@id/exo_controls_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#98000000" />
+
     <LinearLayout
         android:id="@id/exo_center_controls"
         android:layout_width="wrap_content"
@@ -19,12 +25,6 @@
             style="@style/ExoStyledControls.Button.Center.PlayPause" />
 
     </LinearLayout>
-
-    <View
-        android:id="@id/exo_controls_background"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#98000000" />
 
     <androidx.wear.widget.BoxInsetLayout
         android:layout_width="match_parent"
