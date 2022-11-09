@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
+import androidx.annotation.OptIn
 import androidx.core.net.toUri
 import androidx.core.view.isGone
 import androidx.media3.common.MediaItem
@@ -19,6 +20,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
 
+@OptIn(UnstableApi::class)
 class VideoActivity : ComponentActivity() {
     private lateinit var binding: ActivityVideoBinding
 
@@ -28,6 +30,7 @@ class VideoActivity : ComponentActivity() {
         override fun onRenderedFirstFrame() {
             Log.d(BuildConfig.BUILD_TYPE, "#onRenderedFirstFrame")
             binding.progress.isGone = true
+            binding.player.controllerAutoShow = true
 
             Log.d(BuildConfig.BUILD_TYPE, "volume=${exoPlayer.volume}, deviceVolume=${exoPlayer.deviceVolume}")
         }
