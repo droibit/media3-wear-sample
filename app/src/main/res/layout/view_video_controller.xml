@@ -37,6 +37,31 @@
             android:layout_height="match_parent"
             app:boxedEdges="bottom|left|right" />
 
+        <LinearLayout android:id="@id/exo_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/exo_styled_bottom_bar_time_padding"
+            android:paddingEnd="@dimen/exo_styled_bottom_bar_time_padding"
+            android:paddingLeft="@dimen/exo_styled_bottom_bar_time_padding"
+            android:paddingRight="@dimen/exo_styled_bottom_bar_time_padding"
+            android:layout_gravity="center"
+            android:layoutDirection="ltr"
+            app:boxedEdges="bottom|left|right" >
+
+            <TextView android:id="@id/exo_position"
+                style="@style/ExoStyledControls.TimeText.Position"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+            <TextView
+                style="@style/ExoStyledControls.TimeText.Separator"
+                android:text="/" />
+
+            <TextView android:id="@id/exo_duration"
+                style="@style/ExoStyledControls.TimeText.Duration"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+        </LinearLayout>
+
     </androidx.wear.widget.BoxInsetLayout>
 
 </merge>
