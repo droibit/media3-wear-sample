@@ -89,6 +89,11 @@ class VideoActivity : ComponentActivity() {
         binding.player.onPause()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        exoPlayer.release()
+    }
+
     companion object {
         fun createIntent(context: Context) = Intent(context, VideoActivity::class.java)
     }
